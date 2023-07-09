@@ -18,7 +18,7 @@ param publicIpAddressId string
   'Premium'
   'Standard'
 ])
-param sku string = 'Developer'
+param sku string = 'Consumption'
 
 
 @allowed([
@@ -26,7 +26,7 @@ param sku string = 'Developer'
   1
   2
 ])
-param skuCount int = 1
+param skuCount int = 0
 // Default is 1, but must be 0 in case of Consumption SKU.
 
 resource apiManagementService 'Microsoft.ApiManagement/service@2021-08-01' = {
