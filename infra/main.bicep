@@ -28,7 +28,7 @@ param sourceIpAddress string = '10.10.10.10'
 param private bool = false
 
 param resourceGroupName string = ''
-param openaiResourceGroupName string = 'rg-test-openai'
+param openaiResourceGroupName string = 'generative-ai'
 
 param apiManagementName string = ''
 
@@ -41,7 +41,7 @@ param storageAccountName string = ''
 param containerName string = 'content'
 param searchIndexName string = 'gptkbindex'
 
-param cognitiveServicesAccountName string = 'sheryaar-france-openai'
+param cognitiveServicesAccountName string = 'ntteast-openai-trial'
 param cognitiveServicesSkuName string = 'S0'
 param chatGptDeploymentName string = 'gpt-35-turbo'
 param chatGptDeploymentCapacity int = 240
