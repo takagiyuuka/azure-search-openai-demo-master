@@ -193,7 +193,7 @@ module storage 'core/storage/storage-account.bicep' = {
 
 // USER ROLES
 module openAiRoleUser 'core/security/role.bicep' = {
-  scope: rg
+  scope: openaiRg
   name: 'openai-role-user'
   params: {
     principalId: principalId
@@ -244,7 +244,7 @@ module searchContribRoleUser 'core/security/role.bicep' = {
 
 // SYSTEM IDENTITIES
 module openAiRoleBackend 'core/security/role.bicep' = {
-  scope: rg
+  scope: openaiRg
   name: 'openai-role-backend'
   params: {
     principalId: backend.outputs.identityPrincipalId
