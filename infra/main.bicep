@@ -28,7 +28,7 @@ param sourceIpAddress string = '10.10.10.10'
 param private bool = false
 
 param resourceGroupName string = ''
-param openaiResourceGroupName string = 'generative-ai'
+param openaiResourceGroupName string = 'rg-test-openai'
 
 param apiManagementName string = ''
 
@@ -41,7 +41,7 @@ param storageAccountName string = ''
 param containerName string = 'content'
 param searchIndexName string = 'gptkbindex'
 
-param cognitiveServicesAccountName string = 'ntteast-openai-trial'
+param cognitiveServicesAccountName string = 'sheryaar-france-openai'
 param cognitiveServicesSkuName string = 'S0'
 param chatGptDeploymentName string = 'gpt-35-turbo'
 param chatGptDeploymentCapacity int = 240
@@ -193,7 +193,7 @@ module storage 'core/storage/storage-account.bicep' = {
 
 // USER ROLES
 module openAiRoleUser 'core/security/role.bicep' = {
-  scope: rg
+  scope: openaiRg
   name: 'openai-role-user'
   params: {
     principalId: principalId
@@ -244,7 +244,7 @@ module searchContribRoleUser 'core/security/role.bicep' = {
 
 // SYSTEM IDENTITIES
 module openAiRoleBackend 'core/security/role.bicep' = {
-  scope: rg
+  scope: openaiRg
   name: 'openai-role-backend'
   params: {
     principalId: backend.outputs.identityPrincipalId
