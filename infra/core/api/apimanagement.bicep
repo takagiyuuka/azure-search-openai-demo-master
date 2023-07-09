@@ -11,18 +11,23 @@ param apimsubnetId string
 param publicIpAddressId string
 
 @allowed([
+  'Basic'
+  'Consumption'
   'Developer'
-  'Standard'
+  'Isolated'
   'Premium'
+  'Standard'
 ])
 param sku string = 'Developer'
 
 
 @allowed([
+  0
   1
   2
 ])
 param skuCount int = 1
+// Default is 1, but must be 0 in case of Consumption SKU.
 
 resource apiManagementService 'Microsoft.ApiManagement/service@2021-08-01' = {
   name: name
